@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Edit User Profile</title>
+    <link rel="stylesheet" href="../css/edit-profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="../../logo1.jpeg" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="services.html" class="dropbtn">Services</a>
+                <div class="dropdown-content">
+                    <a href="services.html">Weddings</a>
+                    <a href="services.html">Portraits</a>
+                    <a href="services.html">Special Events</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="gallery.html" class="dropbtn">Gallery</a>
+                <div class="dropdown-content">
+                    <a href="gallery.html">Landscape</a>
+                    <a href="gallery.html">Wildlife</a>
+                    <a href="gallery.html">Coastal Birds</a>
+                </div>
+            </li>
+            <li><a href="login.html">Sign In</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="admin-dashboard">
+    <aside class="sidebar">
+        <ul>
+            <li><a href="admin-dashboard.html">Upload New Images</a></li>
+            <li><a href="../delete-image.php">Delete Images</a></li>
+            <li><a href="../manage-enquiries.php">Manage Enquiries</a></li>
+            <li><a href="edit-profile.html">Edit Profile</a></li>
+            <li><a href="../manage-accounts.php">Manage Accounts</a></li>
+            <li><a href="../manage-testimonials.php">Manage Testimonials</a></li>
+            
+        </ul>
+    </aside>
+
+    <section class="content">
+        <h2>Edit User Profile</h2>
+        <div class="edit-profile-form">
+            <form class="profile-form" action="../edit-user.php" method="POST" enctype="multipart/form-data">
+                <label for="id">ID</label>
+                <input type="text" id="id" name="id" placeholder="Enter your ID" required>
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="" disabled selected>Select your gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday" required>
+
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="profile-picture">Profile Picture</label>
+                <input type="file" id="profile-picture" name="profile_picture" accept="image/*">
+
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <button type="submit">Update Profile</button>
+
+                <?php if (!empty($message)): ?>
+                    <div class="<?php echo $messageClass; ?>"><?php echo $message; ?></div>
+                <?php endif; ?>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+        <a href="https://www.facebook.com/yourpage" target="_blank"><i class="ri-facebook-fill"></i></a>
+        <a href="https://www.messenger.com/yourpage" target="_blank"><i class="ri-messenger-fill"></i></a>
+        <a href="https://www.instagram.com/yourpage" target="_blank"><i class="ri-instagram-fill"></i></a>
+        <a href="https://www.linkedin.com/yourpage" target="_blank"><i class="ri-linkedin-fill"></i></a>
+    </div>
+</footer>
+</body>
+</html>
